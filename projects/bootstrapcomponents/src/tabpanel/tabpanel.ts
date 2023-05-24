@@ -122,7 +122,7 @@ export class ServoyBootstrapTabpanel extends ServoyBootstrapBaseTabPanel<HTMLULi
             this.renderer.setStyle(navpane, 'position', 'relative');
             if (fullsize) {
                 const tabs = element.querySelector('ul');
-                this.renderer.setStyle(navpane.parentElement, 'height', 'calc(100% - ' + tabs.clientHeight + 'px)');
+                this.renderer.setStyle(navpane.parentElement, 'height', 'calc(100% - ' + tabs.getClientRects()[0].height + 'px)');
             }
         }
         if (this.cssPosition && this.servoyApi.isInAbsoluteLayout()) {
